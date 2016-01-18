@@ -270,6 +270,9 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.sf.lcd_density=240
 
+# samsung qcom-common
+$(call inherit-product, device/samsung/qcom-common/qcom-common.mk)
+
 $(call inherit-product-if-exists, vendor/samsung/fortuna-common/fortuna-common-vendor.mk)
 
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
