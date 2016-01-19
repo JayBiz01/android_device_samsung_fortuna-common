@@ -29,8 +29,8 @@ PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
 	
 # Configuration
 PRODUCT_COPY_FILES += \
-	$(LOCAL_PATH)/configs/audio_effects.conf:system/etc/audio_effects.conf \
-	$(LOCAL_PATH)/configs/audio_platform_info.xml:system/etc/audio_platform_info.xml \
+    $(LOCAL_PATH)/configs/audio_effects.conf:system/etc/audio_effects.conf \
+    $(LOCAL_PATH)/configs/audio_platform_info.xml:system/etc/audio_platform_info.xml \
     $(LOCAL_PATH)/configs/media_codecs.xml:system/etc/media_codecs.xml \
     $(LOCAL_PATH)/configs/media_profiles.xml:system/etc/media_profiles.xml \
     $(LOCAL_PATH)/configs/audio_policy.conf:system/etc/audio_policy.conf \
@@ -131,9 +131,9 @@ PRODUCT_PACKAGES += \
 
 # Audio
 PRODUCT_PACKAGES += \
-	audiod \
-	audio.primary.msm8916 \
-	audio_policy.msm8916 \
+    audiod \
+    audio.primary.msm8916 \
+    audio_policy.msm8916 \
     audio.a2dp.default \
     audio.r_submix.default \
     audio.usb.default \
@@ -166,16 +166,16 @@ PRODUCT_PACKAGES += \
 	
 # Display
 PRODUCT_PACKAGES += \
-	copybit.msm8916 \
-	libexternal \
-	gralloc.msm8916 \
-	hwcomposer.msm8916 \
-	memtrack.msm8916 \
+    copybit.msm8916 \
+    libexternal \
+    gralloc.msm8916 \
+    hwcomposer.msm8916 \
+    memtrack.msm8916 \
     liboverlay \
     libqdutils \
     libqservice \
-	libvirtual \
-	libmemalloc \
+    libvirtual \
+    libmemalloc \
     libgenlock \
     libqdMetaData \
     libtinyxml
@@ -235,14 +235,13 @@ ADDITIONAL_DEFAULT_PROPERTIES += \
 
 # Wifi
 PRODUCT_PACKAGES += \
-	libcurl \
+    libcurl \
     libqsap_sdk \
     libQWiFiSoftApCfg \
     libwpa_client \
     hostapd \
     dhcpcd.conf \
     wpa_supplicant \
-    wpa_supplicant.conf \
     libwcnss_qmi \
     wcnss_service
 	
