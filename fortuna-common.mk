@@ -82,7 +82,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/keylayout/gpio-keys.kl:system/usr/keylayout/gpio-keys.kl \
     $(LOCAL_PATH)/keylayout/synaptics_rmi4_i2c.kl:system/usr/keylayout/synaptics_rmi4_i2c.kl
 	
-#$(LOCAL_PATH)/wifi/wpa_supplicant.conf:system/etc/wifi/wpa_supplicant.conf \
+# Wi-Fi
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/wifi/WCNSS_cfg.dat:system/etc/firmware/wlan/prima/WCNSS_cfg.dat \
     $(LOCAL_PATH)/wifi/WCNSS_qcom_cfg.ini:system/etc/wifi/WCNSS_qcom_cfg.ini \
@@ -90,6 +90,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/wifi/hostapd.accept:system/etc/hostapd/hostapd.accept \
     $(LOCAL_PATH)/wifi/hostapd.conf:system/etc/hostapd/hostapd_default.conf \
     $(LOCAL_PATH)/wifi/hostapd.deny:system/etc/hostapd/hostapd.deny \
+	$(LOCAL_PATH)/wifi/wpa_supplicant.conf:system/etc/wifi/wpa_supplicant.conf \
     $(LOCAL_PATH)/wifi/p2p_supplicant_overlay.conf:system/etc/wifi/p2p_supplicant_overlay.conf \
     $(LOCAL_PATH)/wifi/wpa_supplicant_overlay.conf:system/etc/wifi/wpa_supplicant_overlay.conf	
 
@@ -197,10 +198,6 @@ PRODUCT_PACKAGES += \
     libqcomfm_jni \
     qcom.fmradio
 
-# IO Scheduler
-PRODUCT_PROPERTY_OVERRIDES += \
-    sys.io.scheduler=row
-
 # Keystore
 PRODUCT_PACKAGES += \
     keystore.msm8916
@@ -241,7 +238,6 @@ PRODUCT_PACKAGES += \
     libwpa_client \
     hostapd \
     dhcpcd.conf \
-	wpa_supplicant.conf \
     wpa_supplicant \
     libwcnss_qmi \
     wcnss_service
