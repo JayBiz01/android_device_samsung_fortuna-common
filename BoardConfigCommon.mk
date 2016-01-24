@@ -59,13 +59,12 @@ TARGET_SYSTEM_PROP 				:= $(LOCAL_PATH)/system.prop
 TARGET_POWERHAL_VARIANT 			:= qcom
 
 # Media 
-TARGET_ENABLE_QC_AV_ENHANCEMENTS 	:= true
-TARGET_QCOM_MEDIA_VARIANT 			:= caf-k30t
-TARGET_HAVE_OMX_HEVC 				:= true
+TARGET_ENABLE_QC_AV_ENHANCEMENTS 		:= true
+TARGET_QCOM_MEDIA_VARIANT 			:= caf-new
 
 # Kernel
 BOARD_CUSTOM_BOOTIMG_MK 			:= $(LOCAL_PATH)/mkbootimg.mk
-BOARD_KERNEL_BASE 				    := 0x80000000
+BOARD_KERNEL_BASE 				:= 0x80000000
 BOARD_KERNEL_CMDLINE 				:= console=null androidboot.hardware=qcom user_debug=31 msm_rtb.filter=0x3F ehci-hcd.park=3 androidboot.bootdevice=7824900.sdhci androidboot.selinux=permissive
 BOARD_KERNEL_PAGESIZE 				:= 2048
 BOARD_KERNEL_SEPARATED_DT 			:= true
@@ -74,9 +73,9 @@ BOARD_RAMDISK_OFFSET     			:= 0x02000000
 TARGET_KERNEL_SOURCE 				:= kernel/samsung/fortuna
 BOARD_FLASH_BLOCK_SIZE 				:= 131072
 TARGET_KERNEL_CONFIG 				:= msm8916_sec_defconfig
-TARGET_KERNEL_SELINUX_CONFIG 		:= selinux_defconfig
+TARGET_KERNEL_SELINUX_CONFIG 			:= selinux_defconfig
 TARGET_KERNEL_TIMA_CONFIG 			:= tima8916_defconfig
-TARGET_KERNEL_VARIANT_CONFIG 		:= msm8916_sec_fortunave3g_eur_defconfig
+TARGET_KERNEL_VARIANT_CONFIG 			:= msm8916_sec_fortunave3g_eur_defconfig
 
 WLAN_MODULES:
 	mkdir -p $(KERNEL_MODULES_OUT)/pronto
@@ -113,16 +112,16 @@ BOARD_VOLD_EMMC_SHARES_DEV_MAJOR 		:= true
 BOARD_VOLD_DISC_HAS_MULTIPLE_MAJORS 		:= true
 BOARD_SUPPRESS_EMMC_WIPE 			:= true
 BOARD_VOLD_MAX_PARTITIONS 			:= 28
-TARGET_PLATFORM_DEVICE_BASE         := /devices/soc.0/
+TARGET_PLATFORM_DEVICE_BASE         		:= /devices/soc.0/
 
 # Audio
-BOARD_USES_ALSA_AUDIO 				 := true
-TARGET_QCOM_AUDIO_VARIANT 			 := caf
-AUDIO_FEATURE_LOW_LATENCY_PRIMARY                := true
+BOARD_USES_ALSA_AUDIO 				:= true
+TARGET_QCOM_AUDIO_VARIANT 			:= caf
+AUDIO_FEATURE_LOW_LATENCY_PRIMARY               := true
 
 # Display
-TARGET_QCOM_DISPLAY_VARIANT 		:= caf-k30t
-TARGET_USES_ION                     := true
+TARGET_QCOM_DISPLAY_VARIANT 			:= caf-new
+TARGET_USES_ION                     		:= true
 TARGET_USES_NEW_ION_API 			:= true
 TARGET_HAVE_HDMI_OUT 				:= false
 TARGET_USES_OVERLAY 				:= true
@@ -158,8 +157,8 @@ BOARD_RIL_CLASS 				:= ../../../$(LOCAL_PATH)/ril/
 PROTOBUF_SUPPORTED := true
 
 # Camera
-TARGET_PROVIDES_CAMERA_HAL          := true
-USE_DEVICE_SPECIFIC_CAMERA          := true
+TARGET_PROVIDES_CAMERA_HAL          		:= true
+USE_DEVICE_SPECIFIC_CAMERA          		:= true
 
 # Releasetools
 TARGET_RELEASETOOLS_EXTENSIONS                  := $(LOCAL_PATH)
