@@ -15,7 +15,6 @@
 <CodecList>
     <Encoders>
 		<MediaCodec name="OMX.google.amrnb.encoder" type="audio/3gpp"/>
-		<MediaCodec name="AACEncoder" type="audio/mp4a-latm" />
         <MediaCodec name="OMX.google.aac.encoder" type="audio/mp4a-latm"/>
         <MediaCodec name="OMX.google.amrwb.encoder" type="audio/amr-wb"/>
         <MediaCodec name="OMX.google.flac.encoder" type="audio/flac"/>
