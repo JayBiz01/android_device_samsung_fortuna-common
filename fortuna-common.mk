@@ -219,7 +219,7 @@ PRODUCT_PACKAGES += \
     libOmxCore \
     libOmxEvrcEnc \
     libOmxQcelp13Enc \
-    libOmxVdec \
+    libOmxVenc \
     libstagefrighthw \
     qcmediaplayer
 
