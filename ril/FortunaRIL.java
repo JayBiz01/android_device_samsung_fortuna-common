@@ -98,6 +98,7 @@ public class FortunaRIL extends RIL implements CommandsInterface {
     private static final int RIL_UNSOL_STK_CC_ALPHA_NOTIFY_I9300I = 1041;
     private static final int RIL_UNSOL_UICC_SUBSCRIPTION_STATUS_CHANGED_I9300I = 11031;
 
+    private AudioManager mAudioManager;
 
     public FortunaRIL(Context context, int networkMode, int cdmaSubscription,Integer instanceId) {
         super(context, networkMode, cdmaSubscription,  instanceId);
