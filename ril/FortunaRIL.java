@@ -48,6 +48,7 @@ import android.telephony.SmsManager;
 import android.telephony.SmsMessage;
 import android.text.TextUtils;
 import android.util.SparseArray;
+import android.media.AudioManager;
 
 import com.android.internal.telephony.gsm.SmsBroadcastConfigInfo;
 import com.android.internal.telephony.gsm.SsData;
@@ -100,6 +101,7 @@ public class FortunaRIL extends RIL implements CommandsInterface {
 
     public FortunaRIL(Context context, int networkMode, int cdmaSubscription,Integer instanceId) {
         super(context, networkMode, cdmaSubscription,  instanceId);
+        mAudioManager = (AudioManager)mContext.getSystemService(Context.AUDIO_SERVICE);
         mQANElements = 6;
     }
 
@@ -406,7 +408,7 @@ public class FortunaRIL extends RIL implements CommandsInterface {
     @Override
     protected void
     processUnsolicited (Parcel p) {
-        Object ret;
+        Object ret = null;
         int dataPosition = p.dataPosition(); // save off position within the Parcel
         int response = p.readInt();
         int newResponse = response;
@@ -422,6 +424,7 @@ public class FortunaRIL extends RIL implements CommandsInterface {
                 break;
             case RIL_UNSOL_WB_AMR_STATE:
                 ret = responseInts(p);
+                setWbAmr(((int[])ret)[0]);
                 break;
             case RIL_UNSOL_RESPONSE_HANDOVER:
                 ret = responseVoid(p);
@@ -435,13 +438,31 @@ public class FortunaRIL extends RIL implements CommandsInterface {
             case 11031:
                 newResponse = RIL_UNSOL_UICC_SUBSCRIPTION_STATUS_CHANGED;
                 break;
-        }
-        if (newResponse != response) {
-            p.setDataPosition(dataPosition);
-            p.writeInt(newResponse);
-        }
-        p.setDataPosition(dataPosition);
-        super.processUnsolicited(p);
+             }
+
+        switch (response) {
+              case RIL_UNSOL_AM:
+                samsungUnsljLogRet(response, ret);
+                String amString = (String) ret;
+                Rlog.d(RILJ_LOG_TAG, "Executing AM: " + amString);
+
+                try {
+                    Runtime.getRuntime().exec("am " + amString);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                    Rlog.e(RILJ_LOG_TAG, "am " + amString + " could not be executed.");
+                }
+                break;
+
+	    default:
+             if (newResponse != response) {
+                  p.setDataPosition(dataPosition);
+                  p.writeInt(newResponse);
+            }
+	        p.setDataPosition(dataPosition);
+    		super.processUnsolicited(p);
+    		return;
+	}
     }
 
 
@@ -474,4 +495,29 @@ public class FortunaRIL extends RIL implements CommandsInterface {
         }
         riljLog("parcel position=" + p.dataPosition() + ": " + s);
     }
+
+    static String
+    samsungResponseToString(int request)
+    {
+        switch(request) {
+            // SAMSUNG STATES
+            case RIL_UNSOL_AM: return "RIL_UNSOL_AM";
+            default: return "<unknown response: "+request+">";
+        }
+    }
+    
+    protected void samsungUnsljLogRet(int response, Object ret) {
+        riljLog("[UNSL]< " + samsungResponseToString(response) + " " + retToString(response, ret));
+    }
+
+    private void setWbAmr(int state) {
+        if (state == 1) {
+            Rlog.d(RILJ_LOG_TAG, "setWbAmr(): setting audio parameter - wb_amr=on");
+            mAudioManager.setParameters("wb_amr=on");
+        }else if (state == 0) {
+            Rlog.d(RILJ_LOG_TAG, "setWbAmr(): setting audio parameter - wb_amr=off");
+            mAudioManager.setParameters("wb_amr=off");
+        }
+    }
+
 }
