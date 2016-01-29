@@ -1043,14 +1043,6 @@ service ds_fmc_appd /system/bin/ds_fmc_appd -p "rmnet0" -D
 on property:persist.data.ds_fmc_app.mode=1
     start ds_fmc_appd
 
-#service ims_regmanager /system/bin/exe-ims-regmanagerprocessnative
-#    class late_start
-#    group net_bt_admin inet radio wifi
-#    disabled
-
-#on property:persist.ims.regmanager.mode=1
-#    start ims_regmanager
-
 #on property:ro.data.large_tcp_window_size=true
     # Adjust socket buffer to enlarge TCP receive window for high bandwidth (e.g. DO-RevB)
 #    write /proc/sys/net/ipv4/tcp_adv_win_scale  2
@@ -1067,68 +1059,17 @@ on property:persist.data.ds_fmc_app.mode=1
 #    disabled
 
 # virtual sdcard daemon running as media_rw (1023)
-#service sdcard /system/bin/sdcard -u 1023 -g 1023 -l -r /data/media /mnt/shell/emulated
-#    class late_start
-#    oneshot
 service sdcard /system/bin/sdcard -u 1023 -g 1023 -l /data/media /mnt/shell/emulated
 	class late_start
-
-#service fuse_extSdCard /system/bin/sdcard -u 1023 -g 1023 -w 1023 -d -f /mnt/media_rw/extSdCard /storage/extSdCard
-#    class late_start
-#    disabled
-#    oneshot
 
 service fuse_sdcard1 /system/bin/sdcard -u 1023 -g 1023 -d /mnt/media_rw/sdcard1 /storage/sdcard1
 	class late_start
 	disabled	
 
-#service usb_uicc_enable /system/bin/sh /system/etc/init.qcom.uicc.sh
-#    class late_start
-#    user root
-#    disabled
-#    oneshot
-
-#service fuse_UsbDriveA /system/bin/sdcard -u 1023 -g 1023 -d -f /mnt/media_rw/UsbDriveA /storage/UsbDriveA
-#    class late_start
-#    disabled
-#    oneshot
-
-#service usb_uicc_daemon /system/bin/usb_uicc_client
-#    class main
-#    user system
-#    group system log net_raw
-#    oneshot
-
-#on property:usb_uicc.enabled=1
-#    start usb_uicc_enable
-
-#on property:usb_uicc.enabled=0
-#    start usb_uicc_enable
-
 #service profiler_daemon /system/bin/profiler_daemon
 #    class late_start
 #    disabled
 #    oneshot
-
-# service fuse_UsbDriveC /system/bin/sdcard -u 1023 -g 1023 -d -f /mnt/media_rw/UsbDriveC /storage/UsbDriveC
-#     class late_start
-#     disabled
-#     oneshot
-
-# service fuse_UsbDriveD /system/bin/sdcard -u 1023 -g 1023 -d -f /mnt/media_rw/UsbDriveD /storage/UsbDriveD
-#     class late_start
-#     disabled
-#     oneshot
-
-# service fuse_UsbDriveE /system/bin/sdcard -u 1023 -g 1023 -d -f /mnt/media_rw/UsbDriveE /storage/UsbDriveE
-#     class late_start
-#     disabled
-#     oneshot
-
-# service fuse_UsbDriveF /system/bin/sdcard -u 1023 -g 1023 -d -f /mnt/media_rw/UsbDriveF /storage/UsbDriveF
-#     class late_start
-#     disabled
-#     oneshot
 
 #service hcidump /system/bin/sh /system/etc/hcidump.sh
 #    user bluetooth
@@ -1188,18 +1129,10 @@ service fuse_sdcard1 /system/bin/sdcard -u 1023 -g 1023 -d /mnt/media_rw/sdcard1
 #on property:persist.sys.qlogd=0
 #    stop qlogd
 
-#service rootagent /system/bin/sh /system/etc/init.qcom.rootagent.sh
-#    disabled
-#    oneshot
-#on property:persist.sys.rootagent=1
-#    start rootagent
-#on property:persist.sys.rootagent=0
-#    stop rootagent
-
-#service vm_bms /system/bin/vm_bms
-#    user root
-#    group root
-#    disabled
+service vm_bms /system/bin/vm_bms
+    user root
+    group root
+    disabled
 
 # Change IO scheduler to CFQ after boot_complete
 on property:sys.boot_completed=1
