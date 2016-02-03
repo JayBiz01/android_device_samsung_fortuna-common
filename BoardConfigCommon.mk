@@ -204,3 +204,10 @@ BOARD_SEPOLICY_UNION += \
     file_contexts \
     genfs_contexts \
     te_macros
+
+# Wi-Fi
+BOARD_WPA_SUPPLICANT_DRIVER := NL80211
+BOARD_HOSTAPD_DRIVER := NL80211
+TARGET_CUSTOM_WIFI := ../../device/samsung/fortuna-common/libhardware_legacy/wifi/wifi.c
+WPA_SUPPLICANT_VERSION := VER_0_8_X
+
