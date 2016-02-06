@@ -117,7 +117,6 @@ TARGET_PLATFORM_DEVICE_BASE         		:= /devices/soc.0/
 # Audio
 BOARD_USES_ALSA_AUDIO 				:= true
 TARGET_QCOM_AUDIO_VARIANT 			:= caf
-AUDIO_FEATURE_LOW_LATENCY_PRIMARY               := true
 
 # Display
 TARGET_QCOM_DISPLAY_VARIANT 			:= caf-new
