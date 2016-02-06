@@ -132,11 +132,12 @@ PRODUCT_PACKAGES += \
 	static_busybox	
 
 # Audio
-# audio.primary.msm8916 \
 PRODUCT_PACKAGES += \
     audiod \
     audio_policy.msm8916 \
     audio.a2dp.default \
+    audio.usb.default \
+    audio.primary.default \
     audio.r_submix.default \
     audio.usb.default \
     libaudio-resampler \
