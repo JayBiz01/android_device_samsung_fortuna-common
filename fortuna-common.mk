@@ -208,21 +208,19 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     Torch     
           
-# OMX
+# Media
 PRODUCT_PACKAGES += \
+    libc2dcolorconvert \
+    libdashplayer \
+    libdivxdrmdecrypt \
+    libmm-omxcore \
     libOmxAacEnc \
     libOmxAmrEnc \
     libOmxCore \
     libOmxEvrcEnc \
     libOmxQcelp13Enc \
     libOmxVenc \
-    libstagefrighthw
- 
-PRODUCT_PACKAGES += \
-    libc2dcolorconvert \
-    libdashplayer \
-    libdivxdrmdecrypt \
-    libmm-omxcore \
+    libstagefrighthw \
     qcmediaplayer
 
 # For userdebug builds
