@@ -208,14 +208,15 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     Torch     
           
-# Media
-#    libOmxAacEnc \
-#    libOmxAmrEnc \
-#    libOmxCore \
-#    libOmxEvrcEnc \
-#    libOmxQcelp13Enc \
-#    libOmxVenc \
-#    libstagefrighthw \
+# OMX
+PRODUCT_PACKAGES += \
+    libOmxAacEnc \
+    libOmxAmrEnc \
+    libOmxCore \
+    libOmxEvrcEnc \
+    libOmxQcelp13Enc \
+    libOmxVenc \
+    libstagefrighthw
  
 PRODUCT_PACKAGES += \
     libc2dcolorconvert \
