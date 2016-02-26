@@ -99,7 +99,7 @@ TARGET_USES_WCNSS_CTRL 		 		:= true
 WPA_SUPPLICANT_VERSION 			        := VER_0_8_X
 WIFI_DRIVER_MODULE_PATH 			:= "/system/lib/modules/wlan.ko"
 WIFI_DRIVER_MODULE_NAME 			:= "wlan"
-TARGET_CUSTOM_WIF				:= ../../device/samsung/fortuna-common/libhardware_legacy/wifi/wifi.c
+TARGET_CUSTOM_WIFI				:= ../../device/samsung/fortuna-common/libhardware_legacy/wifi/wifi.c
 
 # Bluetooth
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR 	:= $(LOCAL_PATH)/bluetooth
@@ -159,7 +159,7 @@ BOARD_CACHEIMAGE_FILE_SYSTEM_TYPE 		:= ext4
 
 # RIL
 BOARD_RIL_CLASS 				:= ../../../$(LOCAL_PATH)/ril/
-PROTOBUF_SUPPORTE				:= true
+PROTOBUF_SUPPORTED				:= true
 
 # Camera
 TARGET_PROVIDES_CAMERA_HAL          		:= true
