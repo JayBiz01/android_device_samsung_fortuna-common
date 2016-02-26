@@ -24,8 +24,8 @@ LOCAL_PATH 					:= device/samsung/fortuna-common
 
 # Platform
 TARGET_BOARD_PLATFORM 				:= msm8916
-TARGET_BOOTLOADER_BOARD_NAME 			:= msm8916
 TARGET_BOARD_PLATFORM_GPU 			:= qcom-adreno306
+TARGET_BOOTLOADER_BOARD_NAME 			:= msm8916
 TARGET_USE_QCOM_BIONIC_OPTIMIZATION 		:= true
 TARGET_USES_QCOM_BSP 				:= true
 COMMON_GLOBAL_CFLAGS 				+= -DQCOM_BSP
@@ -99,6 +99,7 @@ TARGET_USES_WCNSS_CTRL 		 		:= true
 WPA_SUPPLICANT_VERSION 			        := VER_0_8_X
 WIFI_DRIVER_MODULE_PATH 			:= "/system/lib/modules/wlan.ko"
 WIFI_DRIVER_MODULE_NAME 			:= "wlan"
+TARGET_CUSTOM_WIF				:= ../../device/samsung/fortuna-common/libhardware_legacy/wifi/wifi.c
 
 # Bluetooth
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR 	:= $(LOCAL_PATH)/bluetooth
@@ -145,7 +146,6 @@ BOARD_HAS_LARGE_FILESYSTEM			:= true
 TARGET_RECOVERY_DENSITY 			:= hdpi
 
 # Charger
-BOARD_CHARGER_DISABLE_INIT_BLANK 		:= true
 BOARD_CHARGER_ENABLE_SUSPEND 			:= true
 BOARD_CHARGER_SHOW_PERCENTAGE 			:= true
 
@@ -159,7 +159,7 @@ BOARD_CACHEIMAGE_FILE_SYSTEM_TYPE 		:= ext4
 
 # RIL
 BOARD_RIL_CLASS 				:= ../../../$(LOCAL_PATH)/ril/
-PROTOBUF_SUPPORTED := true
+PROTOBUF_SUPPORTE				:= true
 
 # Camera
 TARGET_PROVIDES_CAMERA_HAL          		:= true
@@ -203,10 +203,4 @@ BOARD_SEPOLICY_UNION += \
     file_contexts \
     genfs_contexts \
     te_macros
-
-# Wi-Fi
-BOARD_WPA_SUPPLICANT_DRIVER := NL80211
-BOARD_HOSTAPD_DRIVER := NL80211
-TARGET_CUSTOM_WIFI := ../../device/samsung/fortuna-common/libhardware_legacy/wifi/wifi.c
-WPA_SUPPLICANT_VERSION := VER_0_8_X
 
