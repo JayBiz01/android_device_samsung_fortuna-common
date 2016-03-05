@@ -72,10 +72,7 @@ BOARD_KERNEL_TAGS_OFFSET 			:= 0x01E00000
 BOARD_RAMDISK_OFFSET     			:= 0x02000000
 TARGET_KERNEL_SOURCE 				:= kernel/samsung/fortuna
 BOARD_FLASH_BLOCK_SIZE 				:= 131072
-TARGET_KERNEL_CONFIG 				:= msm8916_sec_defconfig
 TARGET_KERNEL_SELINUX_CONFIG 			:= selinux_defconfig
-TARGET_KERNEL_TIMA_CONFIG 			:= tima8916_defconfig
-TARGET_KERNEL_VARIANT_CONFIG 			:= msm8916_sec_fortunave3g_eur_defconfig
 
 WLAN_MODULES:
 	mkdir -p $(KERNEL_MODULES_OUT)/pronto
