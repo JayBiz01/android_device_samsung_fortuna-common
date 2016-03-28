@@ -229,6 +229,7 @@ ADDITIONAL_DEFAULT_PROPERTIES += \
     ro.adb.secure=0 \
     ro.debuggable=1 \
     persist.radio.multisim.config=dsds \
+    ro.multisim.set_audio_params=true \
     persist.service.adb.enable=1
 
 # Wifi
