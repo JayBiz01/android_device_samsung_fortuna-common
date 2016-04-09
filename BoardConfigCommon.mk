@@ -140,9 +140,6 @@ USE_DEVICE_SPECIFIC_CAMERA           := true
 # CMHW
 BOARD_HARDWARE_CLASS += $(LOCAL_PATH)/cmhw
 
-# Workaround to avoid issues with legacy liblights on QCOM platforms
-TARGET_PROVIDES_LIBLIGHT            := true
-
 # Media
 TARGET_ENABLE_QC_AV_ENHANCEMENTS    := true
 
