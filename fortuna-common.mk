@@ -257,7 +257,22 @@ PRODUCT_PACKAGES += \
 # GPS
 PRODUCT_PACKAGES += \
     gps.msm8916     
-     
+
+PRODUCT_PACKAGES += \
+    libexifa \
+    libjpega \
+    ip6tables \
+    iptables \
+    e2fsck \
+    blkid \
+    libhyphenation \
+    libwebcore \
+    core-junit \
+    libkeyutils \
+    brctl \
+    ethertypes \
+    ebtables
+
 # USB
 PRODUCT_PACKAGES += \
     com.android.future.usb.accessory     
