@@ -7,7 +7,7 @@
 LOCAL_PATH := device/samsung/fortuna-common
 
 # Assert
-TARGET_OTA_ASSERT_DEVICE := samsung_sm_g530h,fortunave3g,fortuna3g
+TARGET_OTA_ASSERT_DEVICE := samsung_sm_g530h
 
 # Platform
 TARGET_BOARD_PLATFORM           := msm8916
@@ -40,10 +40,8 @@ BOARD_KERNEL_TAGS_OFFSET     := 0x01E00000
 BOARD_RAMDISK_OFFSET         := 0x02000000
 BOARD_KERNEL_PAGESIZE        := 2048
 BOARD_KERNEL_SEPARATED_DT    := true
-TARGET_KERNEL_SOURCE         := kernel/samsung/fortunaxx3g
+TARGET_KERNEL_SOURCE         := kernel/samsung/fortuna-common
 
-TARGET_KERNEL_CONFIG                := msm8916_sec_defconfig
-TARGET_KERNEL_VARIANT_CONFIG        := msm8916_sec_fortunave3g_eur_defconfig
 TARGET_KERNEL_SELINUX_CONFIG        := selinux_defconfig
 
 # Partition sizes
