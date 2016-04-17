@@ -2,7 +2,7 @@
 -include device/samsung/qcom-common/BoardConfigCommon.mk
 
 # Inherit from the proprietary version
--include vendor/samsung/fortunave3g/BoardConfigVendor.mk
+-include vendor/samsung/fortuna-common/BoardConfigVendor.mk
 
 LOCAL_PATH := device/samsung/fortuna-common
 
@@ -13,6 +13,7 @@ TARGET_OTA_ASSERT_DEVICE := samsung_sm_g530h
 TARGET_BOARD_PLATFORM           := msm8916
 TARGET_BOARD_PLATFORM_GPU       := qcom-adreno306
 TARGET_BOOTLOADER_BOARD_NAME    := MSM8916
+BLOCK_BASED_OTA 		:= false
 
 # Arch
 TARGET_GLOBAL_CFLAGS            += -mfpu=neon -mfloat-abi=softfp
