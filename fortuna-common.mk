@@ -138,6 +138,7 @@ PRODUCT_PACKAGES += \
     audio.a2dp.default \
     audio.usb.default \
     audio.primary.default \
+    audio.primary.msm8916 \
     audio.r_submix.default \
     audio.usb.default \
     libaudio-resampler \
